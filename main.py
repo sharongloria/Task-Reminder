@@ -11,7 +11,17 @@ def add_reminder():
         reminders[reminder_time] = task
         print(f"Reminder added: {task} at {reminder_time}. \n")
     except ValueError:
-        print("Invlid date/time format. Please use YYYY-MM-DD HH:MM) \n")
+        print("Invalid date/time format. Please use YYYY-MM-DD HH:MM) \n")
+
+def view_reminders():
+    if reminders:
+        print("\nScheduled Reminders:")
+        for time, task in sorted(reminders.items()):
+            print(f"- {task} at {time}")
+    else:
+        print("\nNo reminders set.")
+
 
 
 add_reminder()
+view_reminders()
